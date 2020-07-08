@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="casStyle.css" />
+<script type="text/javascript" src="casScript.js"></script>
+<title>Wes Hightower // Panoply</title>
+</head>
+
+<body>
+	<div id="blackout">
+		<div id="imageHolder">
+			<img src="images/logo.png" id="currentImage" onload="return respondImage()">
+			<div id="loading">
+				<img src="images/loading.gif">
+				<br />
+				Loading
+			</div>
+			<span id="caption">Caption</span>
+			<span id="description">Description</span>
+			<span id="imageCounter"># of #</span>
+			<a href="#" id="prev" onclick="return prevPic()">Previous</a>
+			<a href="#" id="next" onclick="return nextPic()">Next</a>
+			<span id="exit" onclick="return closeGallery()">X</span>
+		</div> <!-- /#imageHolder -->
+	</div>
+	
+
+
+	<div id="navHolder">
+		<div id="navigation">
+			<nav id="mainNav">
+				<a href="about.html" id="navAbout" class="navLink">
+					<span class="navText" id="navTextAbout">Exegesis</span>
+					<img src="images/questionMark.png" class="navImage" id="navImageAbout" />
+				</a>
+	  			<a href="portfolio.html" id="navPortfolio" class="currLink">
+	  				<span class="navText" id="navTextPortfolio">Panoply</span>
+					<img src="images/spyglass.png" class="navImage" id="navImagePortfolio" />
+	  			</a>
+	  			
+	  			<a href="index.html" id="logoLink">
+					<div id="logo">
+						&nbsp;
+					</div> <!-- /#logo -->
+				</a>
+	  			
+				<a href="resume.html" id="navResume" class="navLink">
+					<span class="navText" id="navTextResume">Resume</span>
+					<img src="images/resume.png" class="navImage" id="navImageResume" />
+				</a>
+				<a href="contact.php" id="navContact" class="navLink">
+					<span class="navText" id="navTextContact">Contact</span>
+					<img src="images/phone.png" class="navImage" id="navImageContact" />
+				</a>
+			</nav> <!-- /#mainNav -->
+		</div> <!-- /#navigation -->
+	</div> <!-- /#navHolder -->
+	
+	<div id="headHolder">
+		<div id="header">
+			<img src="images/contentBorder.png" id="contentBorder" />
+		</div> <!-- /#head -->
+	</div> <!-- /#headHolder -->
+	
+	<div id="contentHolder">
+		<div id="content">
+			<div id="title">
+				<hr id="topOutlinePortfolio" />
+				<h1 id="homeTitle"><span class="titleQuote">&quot;</span><span id="titleTitle">P</span>anoply<span class="titleQuote">&quot;</span></h1>
+				<hr id="bottomOutlinePortfolio" />
+			</div> <!-- /#title -->
+		
+			<div id="subNav">
+			<nav id="subNavLinks">
+				<a href ="#" id="designLink" class="subLink" onclick="return showDesign()" onmouseover="return designOver()" onmouseout="return designOut()">
+					Design
+				</a>
+				<a href="#" id="photographyLink" class="subLink" onclick="return showPhotography()" onmouseover="return photogOver()" onmouseout="return photogOut()">
+					Photography
+				</a>
+				<a href="#" id="audioLink" class="subLink" onclick="return showAudio()" onmouseover="return audioOver()" onmouseout="return audioOut()">
+					Audio
+				</a>
+				<a href="#" id="videoLink" class="subLink" onclick="return showVideo()" onmouseover="return videoOver()" onmouseout="videoOut()">
+					Video
+				</a>
+				<a href="#" id="interactiveLink" class="subLink" onclick="return showInteractive()" onmouseover="return interactiveOver()" onmouseout="return interactiveOut()">
+					Interactive
+				</a>
+			</nav> <!-- /#subNavLinks -->
+		</div> <!-- /#subNav -->
+		
+			
+			<div id="explanation">
+				Select a category above or below to see, hear, and play.
+			</div>
+			
+			<div id="thumbs">
+				<div id="designSelect" class="portfolioSelect" onclick="return showDesign()" onmouseover="return designOver()" onmouseout="return designOut()">
+					<img src="images/t_scissors.png" id="designSelectImage" class="portfolioSelectImage" />
+				</div>
+				<div id="photographySelect" class="portfolioSelect" onclick="return showPhotography()" onmouseover="return photogOver()" onmouseout="return photogOut()">
+					<img src="images/t_oldCamera.png" id="photographySelectImage" class="portfolioSelectImage" />
+				</div>
+				<div id="audioSelect" class="portfolioSelect" onclick="return showAudio()" onmouseover="return audioOver()" onmouseout="return audioOut()">
+					<img src="images/t_victrola.png" id="audioSelectImage" class="portfolioSelectImage" />
+				</div>
+				<div id="videoSelect" class="portfolioSelect" onclick="return showVideo()" onmouseover="return videoOver()" onmouseout="videoOut()">
+					<img src="images/t_zoetrope.png" id="videoSelectImage" class="portfolioSelectImage" />
+				</div>
+				<div id="interactiveSelect" class="portfolioSelect" onclick="return showInteractive()" onmouseover="return interactiveOver()" onmouseout="return interactiveOut()">
+					<img src="images/t_jacobsLadder.png" id="interactiveSelectImage" class="portfolioSelectImage" />
+				</div>
+			</div> <!-- /#thumbs -->
+			
+			<img src="#" id="portfolioBG" />
+		</div> <!-- /#content -->
+	</div> <!-- /#contentHolder -->
+	
+	<div id="footHolder">
+		<div id="footBorder">
+			<img src="images/contentBorder.png" id="footBorderImage" />
+		</div> <!-- /#footBorder -->
+	
+		<div id="footer">
+			<span id="copyright">&copy; 2013 Wes Hightower</span>
+						
+			<ul id="otherLinks">
+				<li>
+					<a href="blog/index.php">Blog</a>
+				</li>	
+			</ul> <!-- /#otherLinks -->
+			
+			<a href="credits.html" id="creditsLink">Credits</a>
+		</div> <!-- /#footer -->
+	</div> <!-- /#footHoler -->
+	
+</body>
+</html>

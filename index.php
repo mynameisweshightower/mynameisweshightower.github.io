@@ -1,0 +1,229 @@
+<?php 
+	session_start(); 
+	
+?>
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#AAAAAA">
+		<title>Kiopah // Wise Coding. Reasonable Design</title>
+		<link rel="stylesheet" href="reflectedLight.css">
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+	</head>
+	
+	<body>
+		<div id="preloader-holder">
+			<div class="preloader-div">
+				LOADING
+			</div>
+			<div class="preloader-progress">
+			
+			</div>
+		</div> <!-- /#preloader-holder -->
+		
+		<div id="navigation">
+			<div id="nav-head" class="nav-option">
+				Kiopah
+			</div> <!-- /#nav-head -->
+			<div id="nav-home" class="nav-option">
+				Hello!
+			</div> <!-- /#nav-home -->
+			<div id="nav-skills" class="nav-option">
+				Skills
+			</div> <!-- /#nav-skills -->
+			<div id="nav-works" class="nav-option">
+				Works
+			</div> <!-- /#nav-works -->
+			<div id="nav-samples" class="nav-option">
+				Samples
+			</div> <!-- /#nav-samples -->
+			<div id="nav-contact" class="nav-option">
+				Contact
+			</div> <!-- /#nav-contact -->
+		</div> <!-- /#navigation -->
+		<div id="head-section" class="page">
+			<div id="head-wrapper" class="wrapper">
+				<h1 id="head-header">Kiopah</h1>
+				<div id="logo">
+					<img src="hummingbird.svg">
+				</div> <!-- /#logo -->
+				<h2 id="tagline">Wise Coding. Reasonable Design.</h2>
+			</div> <!-- /#head-wrapper /.wrapper -->
+		</div> <!-- /#head-section /.page -->
+
+		<div id="home-section" class="page">
+			<div id="home-wrapper" class="wrapper">
+				<h2 id="home-header">Hello, World!</h2>
+				<p>
+					My name is Wes Hightower. I am a web developer from Katy, TX.
+				</p>
+				<p>
+					I live for coding, and I hope to help open the internet to disabled users.
+				</p>
+			</div> <!-- /#home-wrapper /.wrapper -->
+		</div> <!-- /#home-section /.page -->
+		
+		<div id="skills-section" class="page">
+			<div id="skills-wrapper" class="wrapper">
+				<h2 id="skills-header">Skills</h2>
+				<p>
+					I am always looking to improve on what I know or to learn new things altogether. My skillset is growing all the time. So far, I have learned...
+				</p>
+				<div id="skills-box">
+					<!--<span id="skill-html" class="skill"><img src="stock/images/html5-logo.svg" id="html5-logo"></span>
+					<span id="skill-css" class="skill">CSS/3</span>
+					<span id="skill-javascript" class="skill">JavaScript/jQuery</span>
+					<span id="skill-design" class="skill">Graphic Design</span> <!-- replace names with logos -->
+					<img src="stock/images/wordcloud3.svg" id="wordCloud">
+				</div> <!-- /#skills-box -->
+			</div> <!-- /#skills-wrapper /.wrapper -->
+		</div> <!-- /#skills-section /.page -->
+
+		<div id="work-section" class="page">
+			<div id="work-wrapper" class="wrapper">
+				<h2 id="work-header">Selected Works</h2>
+				<p>
+					Below is a group of selected works from various disciplines.
+				</p>
+				<p>
+					Select a category, then scroll down to see samples.
+				</p>
+				<div id="portfolio-categories">
+					<div id="prev-category">
+						&lt;
+					</div>
+					<div id="next-category">
+						&gt;
+					</div>
+					<div id="portfolio-options">
+						<div id="portfolio-option-main">
+							<!--<mask>
+								<img src="hummingbirdMask.png">
+							</mask>-->
+							Categories
+						</div>
+						<div id="web">
+							Web
+						</div> <!-- /#web -->
+						<div id="design">
+							Design
+						</div> <!-- /#design -->
+						<div id="photography">
+							Photography
+						</div>
+						<div id="audio">
+							Audio
+						</div>
+						<div id="video">
+							Video
+						</div>
+					</div> <!-- /#portfolio-options -->
+				</div> <!-- /#portfolio-categories -->
+			</div> <!-- /#work-wrapper /.wrapper -->
+		</div> <!-- /#work-section /.page -->
+		
+		<div id="samples-section" class="page samples-section">
+			<div id="samples-wrapper" class="wrapper">
+				<h2 id="samples-header">Samples</h2>
+				<div id="stage">
+					<div id="next-sample">
+						<div class="next-sample-reset">
+							<img src="stock/images/next.svg">
+						</div>
+					</div>
+					<div id="prev-sample">
+						<div class="next-sample-reset">
+							<img src="stock/images/prev.svg">
+						</div>
+					</div>
+					
+					<div id="backstage">
+					</div> <!-- /#backstage -->
+				</div> <!-- /#stage -->
+			</div> <!-- /#samples-wrapper /.wrapper -->
+		</div> <!-- /#samples-section /.page -->
+
+		<div id="contact-section" class="page">
+			<div id="contact-wrapper" class="wrapper">
+				<h2 id="contact-header">Contact</h2>
+					<?php
+			if (isset($_REQUEST['email']) == true)
+			{
+				//echo "<script>ga('send', 'pageview', '/forms/contactThanks');</script>";
+				echo "<p>Thank you for your input!</p>";
+				$to = "bundleofstrings@gmail.com";
+				$subject = "Comment from kiopah.com";
+				$message = $_REQUEST['message'];
+				$name = $_REQUEST['name'];
+				$email = $_REQUEST['email'];
+				//$headers = "From: $from";
+				mail($to,"Subject: " . $subject,"From:\t\t" . $email.  "\nName:\t\t" . $name . "\nComment:\t" . $message);
+
+				mail($email,"Subject: Thanks for your input!","Thank you for taking the time to visit and fill out my form. \n\t-Wes Hightower");
+			}
+			else
+			{
+			//$_SESSION['USERNAME'] = "yes";
+			echo '<p>
+					I am currently available for hire. If my work piques your interest, please let me know here.
+				</p>
+				<p>
+					Even if it doesn\'t, I always enjoy a good chat.
+				</p>
+			<form id="contact" method="POST" action="index.php">
+				<div id="nameLabel" class="formLabel">
+					Name
+				</div>
+				
+				<div id="nameInput" class="formDiv">
+					<input type="text" class="formInput" name="name" required />
+				</div>
+				
+				<div id="emailLabel" class="formLabel">
+					E-Mail
+				</div>
+				
+				<div id="emailInput" class="formDiv">
+					<input type="email" class="formInput" name="email" required />
+				</div>
+				
+				<div id="messageLabel" class="formLabel">
+					Message
+				</div>
+				
+				<div id="messageInput" class="formDiv">
+					<textarea id="messageBox" class="formInput" name="message"></textarea>
+				</div>
+				
+				<div class="formDiv">
+					<input type="submit" value="Send" id="submitButton"/>
+				</div>
+			</form>';
+			}
+			?>
+
+				<div id="social-media">
+					<a href="https://www.facebook.com/wes.hightower.3" alt="Facebook" title="Facebook" target="_blank">
+						<img src="images/fb-art.jpg" id="social-media-facebook">
+					</a>
+					<a href="https://www.linkedin.com/in/wes-hightower-17682562?trk=nav_responsive_tab_profile" alt="Linked In" title="Linked In" target="_blank">
+						<img src="images/linkedin.png" id="social-media-linkedin">
+					</a>
+				</div> <!-- /#social-media -->
+				
+			</div> <!-- /#contact-wrapper /.wrapper -->
+		</div> <!-- /#contact-section /.page -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<?php
+			if (isset($_REQUEST['email']) == true)
+			{
+				echo "<script>$('#nav-contact').click();</script>";
+			}
+		?>
+		<script src="scripts/pageSize.js"></script>
+		<script src="scripts/skills.js"></script>
+		<script src="scripts/portfolio.js"></script>
+	</body>
+</html>
